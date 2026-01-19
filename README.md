@@ -29,3 +29,5 @@ L'application sera accessible sur `http://localhost:4200/`
 - Enregistrement de nouveaux utilisateurs via formulaire
 - Affichage de tous les utilisateurs dans un tableau
 - Suppression d'utilisateurs
+
+Le fichier test-design.html est un simple essai personnel pour avoir un aperçu du design, à ignorer.
