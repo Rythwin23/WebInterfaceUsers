@@ -1,19 +1,31 @@
-# Application web de gestion d'utilisateurs
+# Application Web de Gestion d'Utilisateurs
 
-Application front-end : Angular
-API back-end : NodeJS
-Base de données : MongoDB
+## Stack Technique
+- **Frontend** : Angular
+- **Backend** : Node.js / Express
+- **Base de données** : MongoDB
 
-Pour le tester :
-    
-Démarrer le serveur back-end (une fois activé accessible depuis http://localhost:3000/api)
+Avant de lancer l'application, avoir :
+- **Node.js et npm** : [Télécharge depuis nodejs.org](https://nodejs.org/)
+- **Angular CLI** : `npm install -g @angular/cli`
 
-    cd backend
-    npm install
-    node server.js
+### Démarrer le serveur backend
+```bash
+cd backend
+npm install
+node server.js
+```
+Le serveur sera accessible sur `http://localhost:3000/api`
 
-Démarrer l'application front-end (une fois activé accessible depuis http://localhost:4200/):
+### Démarrer l'application frontend
+```bash
+cd frontend
+npm install
+ng serve
+```
+L'application sera accessible sur `http://localhost:4200/`
 
-    cd frontend
-    npm install
-    ng serve
+## Fonctionnalités
+- Enregistrement de nouveaux utilisateurs via formulaire
+- Affichage de tous les utilisateurs dans un tableau
+- Suppression d'utilisateurs
