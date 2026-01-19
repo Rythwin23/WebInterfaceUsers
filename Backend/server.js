@@ -2,10 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
-const MONGODB_URI = 'mongodb+srv://STAGE2026:stage2026@usersdata.jhqmowi.mongodb.net/?appName=USERSDATA';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/airfrance_users';
 
 app.use(cors());
 app.use(express.json());
