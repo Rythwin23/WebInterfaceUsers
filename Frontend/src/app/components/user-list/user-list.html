@@ -1,0 +1,40 @@
+<div class="table-section">
+  <h2>Liste des utilisateurs</h2>
+
+  <div *ngIf="isLoading()" class="loading-message">
+    Chargement en cours...
+  </div>
+
+  <div *ngIf="errorMessage()" class="error-message">
+    {{ errorMessage() }}
+  </div>
+
+  <table *ngIf="!isLoading() && users().length > 0">
+    <thead>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>ID Entreprise</th>
+      <th>Poste</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users()">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.companyId }}</td>
+      <td>{{ user.companyPosition }}</td>
+      <td>
+        <button class="btn-delete" (click)="deleteUser(user._id)">
+          Supprimer
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!isLoading() && users().length === 0" class="empty-message">
+    Aucun utilisateur enregistré
+  </div>
+</div>

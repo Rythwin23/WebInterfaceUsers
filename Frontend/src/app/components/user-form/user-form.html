@@ -1,0 +1,56 @@
+<div class="form-section">
+  <h2>Enregistrer un nouvel utilisateur</h2>
+  <form (ngSubmit)="onSubmit()" #userFormElement="ngForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">Prénom *</label>
+        <input
+          type="text"
+          id="firstName"
+          [(ngModel)]="form.firstName"
+          name="firstName"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nom *</label>
+        <input
+          type="text"
+          id="lastName"
+          [(ngModel)]="form.lastName"
+          name="lastName"
+          required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="companyId">ID Entreprise *</label>
+        <input
+          type="number"
+          id="companyId"
+          [(ngModel)]="form.companyId"
+          name="companyId"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="companyPosition">Poste *</label>
+        <select
+          id="companyPosition"
+          [(ngModel)]="form.companyPosition"
+          name="companyPosition"
+          required>
+          <option value="">-- Sélectionner --</option>
+          <option *ngFor="let pos of positions" [value]="pos">{{ pos }}</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!isFormValid() || isLoading()">
+      {{ isLoading() ? 'Ajout en cours...' : 'Ajouter l\'utilisateur' }}
+    </button>
+
+    <div *ngIf="errorMessage()" class="error-message">
+      {{ errorMessage() }}
+    </div>
+  </form>
+</div>
